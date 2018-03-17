@@ -190,9 +190,9 @@ CREATE TABLE ClickedLinks (
 );
 
 CREATE TABLE EmailEventInteractions (
+    interactionId INTEGER AUTO_INCREMENT PRIMARY KEY,
     deploymentId INTEGER,
     emailEventId INTEGER,
-    PRIMARY KEY(deploymentId, emailEventId),
     FOREIGN KEY (deploymentId) REFERENCES Deployment(id),
     FOREIGN KEY (emailEventId) REFERENCES EmailEvents (emailEventId)
 );
