@@ -16,7 +16,7 @@ CREATE TABLE DWDeviceRegistrationReport (
 );
 
 INSERT INTO DWDeviceRegistrationReport
-SELECT  device.carrier,
+SELECT  COALESCE(device.carrier, "UNKNOWN"),
         YEAR(regDate) as year,
         MONTH(regDate) as month,
         device.model,
